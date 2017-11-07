@@ -142,14 +142,14 @@ X_train1 = X_train[:half]
 # Rotated image
 X_train2 = X_train[half:].reshape(-1, 28, 28)
 X_train2 = scipy.ndimage.interpolation.rotate(X_train2, 90, axes=(1, 2))
-X_train2 = X_train2.reshape(-1, 28*28)
+X_train2 = X_train2.reshape(-1, 28 * 28)
 # Cleanup
 del X_train
 
 
 def sample_X(X, size):
-    start_idx = np.random.randint(0, X.shape[0]-size)
-    return X[start_idx:start_idx+size]
+    start_idx = np.random.randint(0, X.shape[0] - size)
+    return X[start_idx:start_idx + size]
 
 
 if not os.path.exists('out/'):
